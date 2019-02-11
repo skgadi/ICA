@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="100"
+        android:title="@string/action_share"
+        android:icon="@drawable/ic_share_black_24dp"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_image"
+        android:orderInCategory="100"
+        android:title="@string/action_image"
+        android:icon="@drawable/ic_image_black_24dp"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_bluetooth"
+        android:orderInCategory="100"
+        android:title="@string/action_bluetooth_connect"
+        android:icon="@drawable/ic_bluetooth_disabled_black_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_run_simulation"
+        android:orderInCategory="100"
+        android:title="@string/action_run"
+        android:icon="@drawable/ic_play_arrow_black_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_documentation"
+        android:orderInCategory="100"
+        android:title="@string/action_documentation"
+        android:icon="@drawable/ic_library_books_black_24dp"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        app:showAsAction="never" />
+</menu>

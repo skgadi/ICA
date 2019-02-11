@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Interactive Control Algorithms</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Interactive Control Algorithms</string>
+    <string name="nav_header_subtitle">https://github.com/skgadi/ICA</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_bluetooth_connect">Connect bluetooth bridge</string>
+    <string name="action_share">Share</string>
+    <string name="action_image">Take a screenshot</string>
+    <string name="action_run">Run simulation</string>
+    <string name="action_documentation">Documentation</string>
+    <string-array name="Toasts">
+        <item>Bluetooth is not available on this cell phone.</item>
+        <item>Bluetooth is disabled. Please enable it from the settings.</item>
+        <item>Bluetooth is enabled.</item>
+    </string-array>
+</resources>
