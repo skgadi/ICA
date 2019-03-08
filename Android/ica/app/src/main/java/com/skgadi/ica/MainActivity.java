@@ -21,9 +21,7 @@ import android.widget.Toast;
 import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 
-import app.akexorcist.bluetotohspp.library.BluetoothSPP;
-import app.akexorcist.bluetotohspp.library.BluetoothState;
-import app.akexorcist.bluetotohspp.library.DeviceList;
+import me.aflak.bluetooth.Bluetooth;
 
 
 public class MainActivity extends AppCompatActivity
@@ -46,7 +44,7 @@ public class MainActivity extends AppCompatActivity
         IN_USE
     }
     BLUETOOTH_STATUS BluetoothStatus;
-    BluetoothSPP bt;
+    Bluetooth bt;
     android.content.Context Context;
 
     LinearLayout ModelView;
@@ -80,7 +78,6 @@ public class MainActivity extends AppCompatActivity
         ModelView = (LinearLayout)findViewById(R.id.MSRootLayout);
         Toasts = getResources().getStringArray(R.array.Toasts);
         Context = getApplicationContext();
-        bt = new BluetoothSPP(Context);
         SetHomeScreenToDefaultState();
     }
 
@@ -104,7 +101,6 @@ public class MainActivity extends AppCompatActivity
         RunButton = menu.getItem(3);
         DocumentationButton = menu.getItem(4);
         SettingsButton = menu.getItem(5);
-        CheckBluetoothAvailable();
         return true;
     }
 
@@ -124,7 +120,6 @@ public class MainActivity extends AppCompatActivity
                 SetToolBarIconsStates(TOOLBAR_STATES.BLUETOOTH_CONNECTED);
                 break;
             case R.id.action_bluetooth:
-                HandleBluetoothButton();
                 break;
             case R.id.action_run_simulation:
                 SetToolBarIconsStates(TOOLBAR_STATES.BLUETOOTH_UNAVAILABLE);
@@ -162,62 +157,6 @@ public class MainActivity extends AppCompatActivity
 
     /*Added by SKGadi*/
 
-    //---Handling Bluetooth start
-    private void HandleBluetoothButton() {
-        Intent intent;
-        switch (BluetoothStatus) {
-            case UNAVAILABLE:
-                CheckBluetoothAvailable();
-                break;
-            case DISABLED:
-                CheckBluetoothAvailable();
-                intent = new Intent(getApplicationContext(), DeviceList.class);
-                startActivityForResult(intent, BluetoothState..REQUEST_ENABLE_BT);
-                Toast.makeText(Context, "hello", Toast.LENGTH_SHORT).show();
-                break;
-            case ENABLED:
-                intent = new Intent(getApplicationContext(), DeviceList.class);
-                startActivityForResult(intent, BluetoothState.REQUEST_CONNECT_DEVICE);
-                break;
-            case CONNECTED:
-                break;
-            case IN_USE:
-                break;
-        }
-        /*bt.startService(BluetoothState.DEVICE_OTHER);
-        bt.stopService();*/
-    }
-    private void CheckBluetoothAvailable() {
-        if(bt.isBluetoothAvailable()) {
-            if(bt.isBluetoothEnabled()) {
-                BluetoothStatus = BLUETOOTH_STATUS.ENABLED;
-                SetToolBarIconsStates(TOOLBAR_STATES.BLUETOOTH_DISCONNECTED);
-                Toast.makeText(Context, Toasts[2], Toast.LENGTH_SHORT).show();
-            } else {
-                BluetoothStatus = BLUETOOTH_STATUS.DISABLED;
-                SetToolBarIconsStates(TOOLBAR_STATES.BLUETOOTH_UNAVAILABLE);
-                Toast.makeText(Context, Toasts[1], Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            BluetoothStatus = BLUETOOTH_STATUS.UNAVAILABLE;
-            SetToolBarIconsStates(TOOLBAR_STATES.BLUETOOTH_UNAVAILABLE);
-            Toast.makeText(Context, Toasts[0], Toast.LENGTH_SHORT).show();
-        }
-    }
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == BluetoothState.REQUEST_CONNECT_DEVICE) {
-            if(resultCode == Activity.RESULT_OK)
-                bt.connect(data);
-        } else if(requestCode == BluetoothState.REQUEST_ENABLE_BT) {
-            if(resultCode == Activity.RESULT_OK) {
-                bt.setupService();
-                bt.startService(BluetoothState.DEVICE_ANDROID);
-            } else {
-                // Do something if user doesn't choose any device (Pressed back)
-                Toast.makeText(Context, Toasts[0], Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
     //---Handling Bluetooth end
 
     private void SetToolBarIconsStates (TOOLBAR_STATES TBState) {

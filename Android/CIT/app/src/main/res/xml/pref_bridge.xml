@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:defaultValue="ARD"
+        android:entries="@array/pref_bridge_circuit_type_entries"
+        android:entryValues="@array/pref_bridge_circuit_type_values"
+        android:key="bridge_circuit_type"
+        android:summary="%s"
+        android:title="@string/pref_bridge_circuit_type" />
+
+    <EditTextPreference
+        android:defaultValue="0"
+        android:key="bridge_ai_port"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="number"
+        android:title="@string/pref_bridge_ai_port"
+        android:dialogMessage="@string/pref_bridge_ai_port_desc"/>
+
+    <EditTextPreference
+        android:defaultValue="5"
+        android:key="bridge_ao_port"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="number"
+        android:title="@string/pref_bridge_ao_port"
+        android:dialogMessage="@string/pref_bridge_ao_port_desc"/>
+
+    <EditTextPreference
+        android:defaultValue="0"
+        android:key="bridge_out_limit_lower"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="number"
+        android:title="@string/pref_bridge_out_limit_lower"
+        android:dialogMessage="@string/pref_bridge_out_limit_lower_desc"/>
+
+    <EditTextPreference
+        android:defaultValue="5"
+        android:key="bridge_out_limit_upper"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="number"
+        android:title="@string/pref_bridge_out_limit_upper"
+        android:dialogMessage="@string/pref_bridge_out_limit_upper_desc"/>
+
+</PreferenceScreen>

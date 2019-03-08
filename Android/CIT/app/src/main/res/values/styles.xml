@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="MaterialBaseBaseTheme.Light">
+        <item name="android:windowFullscreen">true</item>
+        <!--item name="android:colorBackground">@color/background_material_light</item-->
+    </style>
+    <style name="SubAppTheme" parent="MaterialDrawerTheme.Light.ActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <!--item name="android:colorBackground">@color/background_material_light</item-->
+    </style>
+</resources>

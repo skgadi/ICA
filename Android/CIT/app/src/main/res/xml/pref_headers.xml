@@ -1,0 +1,20 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:fragment="com.skgadi.cit.SettingsActivity$SimulationFragment"
+        android:icon="@drawable/ic_timer_green_24dp"
+        android:title="@string/pref_header_simulation" />
+
+    <header
+        android:fragment="com.skgadi.cit.SettingsActivity$GraphFragment"
+        android:icon="@drawable/ic_timeline_blue_24dp"
+        android:title="@string/pref_header_graphs" />
+
+    <header
+        android:fragment="com.skgadi.cit.SettingsActivity$BridgeFragment"
+        android:icon="@drawable/icon_bridge"
+        android:title="@string/pref_header_bridge" />
+
+</preference-headers>

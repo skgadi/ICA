@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id="@+id/download"
+        android:icon="@drawable/icon_download"
+        android:title="@string/BUTTON_DOWNLOAD"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/icon_settings"
+        android:title="@string/BUTTON_SETTINGS"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_documentation"
+        android:icon="@drawable/icon_documentation"
+        android:title="@string/BUTTON_DOCUMENTATION"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/icon_share"
+        android:title="@string/BUTTON_SHARE"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/simulate"
+        android:icon="@drawable/icon_simulate_disabled"
+        android:title=""
+        app:showAsAction="always" />
+
+</menu>

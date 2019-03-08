@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue="100"
+        android:key="sim_sampling_time"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="number"
+        android:title="@string/pref_sim_sampling_time"
+        android:dialogMessage="@string/pref_sim_sampling_time_desc"/>
+
+    <EditTextPreference
+        android:defaultValue="1000"
+        android:key="sim_sampling_tolerance"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="number"
+        android:title="@string/pref_sim_tolerance"
+        android:dialogMessage="@string/pref_sim_tolerance_desc"/>
+
+    <EditTextPreference
+        android:defaultValue="-1"
+        android:key="sim_stop_sim_after"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="numberSigned"
+        android:title="@string/pref_sim_stop_sim_after"
+        android:dialogMessage="@string/pref_sim_stop_sim_after_desc"/>
+
+    <ListPreference
+        android:defaultValue="SIM"
+        android:entries="@array/pref_sim_actual_sampling_time_type_entries"
+        android:entryValues="@array/pref_sim_actual_sampling_time_type_values"
+        android:key="sim_actual_sampling_time_type"
+        android:summary="%s"
+        android:title="@string/pref_sim_actual_sampling_time_type" />
+
+    <EditTextPreference
+        android:defaultValue="100"
+        android:key="sim_ma_data_points"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="number"
+        android:title="@string/pref_sim_ma_data_points"
+        android:dialogMessage="@string/pref_sim_ma_data_points_desc"/>
+
+    <!--EditTextPreference
+        android:defaultValue="15"
+        android:key="sim_wma_weight"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="number"
+        android:title="@string/pref_sim_wma_weight"
+        android:dialogMessage="@string/pref_sim_wma_weight_desc"/-->
+
+</PreferenceScreen>
